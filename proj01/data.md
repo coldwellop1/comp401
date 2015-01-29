@@ -3,7 +3,15 @@
 
 - A graph can be defined as a bipartite graph so long as the set of vertices can be colored using two different colors such that there are no two adjacent vertices that have the same color.  Each of these colors then represents a set of data. (my summary of above)
 
-- A _complete bipartite graph_ is a graph G whose vertex set V can be partitioned into two non empty sets V1 and V2 in such a way that every vertex in V1 is adjacent to every vertex in V2, no vertex in V1 is adjacent to a vertex in V1, and no vertex in V2 is adjacent to a vertex in V2. If V1 has r vertices and V2 has s vertices then the complete bipartite graph is written as Kr, s .
+- A _complete bipartite graph_ is a graph G whose vertex set V can be partitioned into two non empty sets V1 and V2 in such a way that every vertex in V1 is adjacent to every vertex in V2, no vertex in V1 is adjacent to a vertex in V1, and no vertex in V2 is adjacent to a vertex in V2. If V1 has r vertices and V2 has s vertices then the complete bipartite graph is written as Kr, s . (http://www.mathcove.net/petersen/lessons/get-lesson?les=17)
+- (http://en.wikipedia.org/wiki/Bipartite_graph)
+  - Every tree is bipartite
+  - Cycle graphs ith an even number of vertices are bipartite
+  - Hypercube graphs, partial cubes, and median graphs are bipartite
+  - Characteristics:
+    - A graph is bipartite iff it doesn't contain an odd cycle (there is no loop connection between any odd number of vertices)
+    - A graph is bipartite iff it can be colored using 2 colors and no 2 adjacent vertices have the same color.
+
 
 ## Coding Bipartite Graphs
 - Following is a simple algorithm to find out whether a given graph is Birpartite or not using Breadth First Search (BFS).
