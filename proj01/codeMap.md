@@ -24,7 +24,7 @@ _Document format requirements for importing graph:_ the first line of the text f
 The above file would create the following graph
 
 _A_ ----- G ----- _E_ ----- F ----- _D_
-|                  
+
 |                  
 H ----- _C_ ----- I ----- _B_
       
