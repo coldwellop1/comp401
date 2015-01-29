@@ -7,7 +7,6 @@
 - (http://en.wikipedia.org/wiki/Bipartite_graph)
   - Every tree is bipartite
   - Cycle graphs ith an even number of vertices are bipartite
-  - Hypercube graphs, partial cubes, and median graphs are bipartite
   - Characteristics:
     - A graph is bipartite iff it doesn't contain an odd cycle (there is no loop connection between any odd number of vertices)
     - A graph is bipartite iff it can be colored using 2 colors and no 2 adjacent vertices have the same color.
@@ -21,3 +20,11 @@
   4.	This way, assign color to all vertices such that it satisfies all the constraints of m way coloring problem where m = 2.
   5. While assigning colors, if we find a neighbor which is colored with same color as current vertex, then the graph cannot be colored with 2 vertices (or graph is not Bipartite)
   (http://www.geeksforgeeks.org/bipartite-graph/)
+
+## Functions to Implement
+- import a graph or create your own
+- determine if a given graph is bipartite
+- search through graph for a certain value held by a vertex
+- add a vertex to the graph
+- delete a vertex from the graph
+- edit the value of a vertex within the graph
