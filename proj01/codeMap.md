@@ -1,7 +1,10 @@
 ## Class: biGraph
       members:
-        array of vertices
-        array of edges 
+        * ~~array of vertices~~
+        * ~~array of edges~~
+        * number of vertices (n)
+        * 
+        
         
 ### Create graph
   - insert vertices
