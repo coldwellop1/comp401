@@ -1,3 +1,16 @@
+// Emily S. Rose
+// Wheaton College Class of 2015
+// Computer Science Senior Seminar
+// February 2015
+//
+// CONTENTS:
+// bipartite_graphs.cpp contains the main driver code for creating a graph on the console.  The program provides the user with the options of creating their own graph or importing one from a file.  The user is then able to add and delete edges between nodes, check for the existance of an edge, display the entire graph to the console, or display the graph by only showing the existing edges between nodes. 
+//
+// REQUIRED IMPORT FILE FORMAT: 
+// Any file to be imported into this program as graph data must have the following format:
+//	- The first line must include ONLY the number of nodes in the graph
+//	- The second line must include either a 1 (Yes) or a 0 (No), representing 
+
 #include "stdafx.h"
 #include "adj_matrix.h"
 #include <fstream>
