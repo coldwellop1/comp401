@@ -4,6 +4,7 @@
 #pragma once
 #include <iostream>
 #include <fstream>
+#include <string>
 
 using namespace std;
 
@@ -18,7 +19,6 @@ public:
 	void addEdge(int from, int to);
 	void removeEdge(int from, int to);
 	bool checkEdge(int from, int to);
-	void readFile(string filename);
 	void print(bool zeros);
 
 

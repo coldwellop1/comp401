@@ -44,12 +44,19 @@ void adj_matrix::addEdge(int from, int to)
 		cout << "Error. Invalid Input." << endl;
 
 	// check that edge does not already exist
-	else if (checkEdge(from, to))
+	else if (checkEdge_h(from-1, to-1))
 		cout << "There already exists an edge from node " << from << " to node " << to << "." << endl;
 
 	// place edge(s)
-	else
-		addEdge_h(from-1, to-1);	
+	else{
+		addEdge_h(from - 1, to - 1); 
+		if (directed == true){
+			cout << "Added " << from << "->" << to << "." << endl;
+		}
+		else{
+			cout << "Added " << from << "--" << to << "." << endl;
+		}
+	}
 }
 
 
@@ -65,7 +72,15 @@ void adj_matrix::addEdge_h(int from, int to)
 
 
 bool adj_matrix::checkEdge(int from, int to){
-	return checkEdge_h(from-1, to-1);
+	if (checkEdge_h(from - 1, to - 1)){
+		cout << "Edge Exists." << endl;
+		return true;
+	}
+	else{
+		cout << "No Edge Found." << endl;
+		return false;
+	}
+
 }
 
 
@@ -86,12 +101,20 @@ void adj_matrix::removeEdge(int from, int to)
 		cout << "Error. Invalid Input." << endl;
 
 	// check that edge exists
-	else if (!checkEdge(from, to))
+	else if (!checkEdge_h(from-1, to-1))
 		cout << "There does not exist an edge from " << from << " to " << to << "." << endl;
 
 	// remove edge(s)
-	else
-		removeEdge_h(from-1, to-1);
+	else{
+		removeEdge_h(from - 1, to - 1);
+
+		if (directed == true){
+			cout << "Removed " << from << "->" << to << "." << endl;
+		}
+		else{
+			cout << "Removed " << from << "--" << to << "." << endl;
+		}
+	}
 }
 
 
@@ -103,6 +126,8 @@ void adj_matrix::removeEdge_h(int from, int to)
 	// if graph is NOT directed, remove second edge going in other direction
 	if (directed == false)
 		matrix[to][from] = 0;
+
+
 }
 
 
@@ -156,30 +181,3 @@ void adj_matrix::print_h(bool zeros)
 }
 
 
-void adj_matrix::readFile(string filename){
-	fstream fin;
-	string line, from, to;
-	int strt, fnsh;
-	int commaLoc;
-	fin.open(filename);
-	if (fin.is_open()){
-		while (!fin.eof()){
-			getline(fin, line);
-			if (line == ""){} //skip blank lines
-			else{
-				commaLoc = line.find(',');
-				from = line.substr(0, commaLoc);
-				to = line.substr(commaLoc + 2, line.length());
-				strt = atoi(from.c_str());
-				fnsh = atoi(to.c_str());
-				
-			}
-		}
-	}
-	else{
-		cout << "Cannot open file." << endl;
-		return;
-	}
-	cout << "Read successful." << endl;
-
-}
