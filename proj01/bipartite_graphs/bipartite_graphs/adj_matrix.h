@@ -3,6 +3,7 @@
 
 #pragma once
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -17,7 +18,7 @@ public:
 	void addEdge(int from, int to);
 	void removeEdge(int from, int to);
 	bool checkEdge(int from, int to);
-
+	void readFile(string filename);
 	void print(bool zeros);
 
 
@@ -39,7 +40,7 @@ private:
 	bool checkEdge_h(int from, int to);
 
 	// display graph
-	void printMatrix(bool zeros);
+	void print_h(bool zeros);
 };
 
 #endif  //adj_matrix_H

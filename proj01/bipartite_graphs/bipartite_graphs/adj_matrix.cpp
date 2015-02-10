@@ -108,12 +108,12 @@ void adj_matrix::removeEdge_h(int from, int to)
 
 // display graph
 void adj_matrix::print(bool zeros){
-	printMatrix(zeros);
+	print_h(zeros);
 }
 
 
 // graph display helper function
-void adj_matrix::printMatrix(bool zeros)
+void adj_matrix::print_h(bool zeros)
 {
 	if (0 >= nodeCount){
 		cout << "ERROR: matrix is too small to display." << endl;
@@ -156,3 +156,30 @@ void adj_matrix::printMatrix(bool zeros)
 }
 
 
+void adj_matrix::readFile(string filename){
+	fstream fin;
+	string line, from, to;
+	int strt, fnsh;
+	int commaLoc;
+	fin.open(filename);
+	if (fin.is_open()){
+		while (!fin.eof()){
+			getline(fin, line);
+			if (line == ""){} //skip blank lines
+			else{
+				commaLoc = line.find(',');
+				from = line.substr(0, commaLoc);
+				to = line.substr(commaLoc + 2, line.length());
+				strt = atoi(from.c_str());
+				fnsh = atoi(to.c_str());
+				
+			}
+		}
+	}
+	else{
+		cout << "Cannot open file." << endl;
+		return;
+	}
+	cout << "Read successful." << endl;
+
+}

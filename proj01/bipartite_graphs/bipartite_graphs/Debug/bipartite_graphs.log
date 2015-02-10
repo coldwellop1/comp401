@@ -1,18 +1,20 @@
-﻿Build started 2/5/2015 12:42:23 AM.
+﻿Build started 2/5/2015 12:45:25 PM.
      1>Project "C:\Users\Em\Documents\GitHub\comp401\proj01\bipartite_graphs\bipartite_graphs\bipartite_graphs.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\bipartite_graphs.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\bipartite_graphs.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt adj_matrix.cpp bipartite_graphs.cpp
+         bipartite_graphs.cpp
          adj_matrix.cpp
          Generating Code...
-         Skipping... (no relevant changes detected)
-         bipartite_graphs.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Em\Documents\GitHub\comp401\proj01\bipartite_graphs\Debug\bipartite_graphs.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Em\Documents\GitHub\comp401\proj01\bipartite_graphs\Debug\bipartite_graphs.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Em\Documents\GitHub\comp401\proj01\bipartite_graphs\Debug\bipartite_graphs.lib" /MACHINE:X86 Debug\adj_matrix.obj
          Debug\bipartite_graphs.obj
          Debug\stdafx.obj
+         LINK : C:\Users\Em\Documents\GitHub\comp401\proj01\bipartite_graphs\Debug\bipartite_graphs.exe not found or not built by the last incremental link; performing full link
          bipartite_graphs.vcxproj -> C:\Users\Em\Documents\GitHub\comp401\proj01\bipartite_graphs\Debug\bipartite_graphs.exe
      1>Done Building Project "C:\Users\Em\Documents\GitHub\comp401\proj01\bipartite_graphs\bipartite_graphs\bipartite_graphs.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.06
+Time Elapsed 00:00:09.18

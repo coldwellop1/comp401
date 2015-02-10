@@ -10,7 +10,7 @@ using namespace std;
 
 void menu(adj_matrix myGraph);
 
-string nCount, dir, choice, input, start, finish;
+string nCount, dir, choice, input, start, finish, filename;
 int to, from, nodes;
 bool direct;
 
@@ -42,7 +42,7 @@ void menu(adj_matrix myGraph){
 	cout << "3. Determine if there is an edge between two nodes" << endl;
 	cout << "4. Display graph" << endl;
 	cout << "5. Display graph (edges only)" << endl;
-	//cout << "8. Import graph from file" << endl;
+	cout << "8. readFile graph from file" << endl;
 	//cout << "7. Export graph to file" << endl;
 	cout << "0. Quit" << endl;
 	cin >> input;
@@ -69,8 +69,12 @@ void menu(adj_matrix myGraph){
 		myGraph.print(true);	//true: we do want zeros
 	else if (input == "5")
 		myGraph.print(false);		//false: we don't want zeros
-	//else if (input == "6")
-	//	myGraph.print();
+	else if (input == "6"){	//readFile graph
+		cout << "Please enter the full path to the file: ";
+		cin >> filename;
+		cout << endl;
+		myGraph.readFile(filename);
+	}
 	//else if (input == "7")
 	else if (input == "0"){
 		myGraph.~myGraph();
