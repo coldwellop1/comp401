@@ -9,7 +9,8 @@
 // REQUIRED IMPORT FILE FORMAT: 
 // Any file to be imported into this program as graph data must have the following format:
 //	- The first line must include ONLY the number of nodes in the graph
-//	- The second line must include either a 1 (Yes) or a 0 (No), representing 
+//	- The second line must include either a 1 (Yes) or a 0 (No), representing whether or not the user requires the graph to be directed.
+//	- The remaining lines will each include an ordered pair of nodes, separated by a comma and then a space, representing where an edge exists. For a directed graph, ( ex. 4, 5) means that an edge will be created coming out of node 4 and going into node 5.
 
 #include "stdafx.h"
 #include "adj_matrix.h"
