@@ -15,4 +15,4 @@
 
  1. Use the given ordered pairs to connect the directed graph:
 
-   ![Image cannot load. See ex_1.png.](/prep/ex_1.png)
+   ![Image cannot load. See ex_1.png.](prep/ex_1.png)
