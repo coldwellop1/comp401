@@ -4,7 +4,7 @@
   * How would we represent a graph as a data structure?
   * What are some uses of bipartite graphs?
 
-#### Basic Information:
+#### Basic Information on Graphs:
 **What is a graph?**
 > A graph is a collection of nodes and edges that show the relationship between
 > objects in a given set.  Each node is labeled to show which object it represents,
@@ -26,6 +26,9 @@
 > ![Immage cannot load. See c.png.](prep/c.png)
 
 **What makes a graph 'bipartite'?**
+> To qualify as 'bipartite', the nodes of a graph must be able to be split into 
+> **two** separate groups such that no two nodes within one group are connected 
+> by an edge.  
 
 #### Exercises:
 
