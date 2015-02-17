@@ -43,10 +43,8 @@
 
 -----------------
 #### Further Reading:
- * ![Wolfram](http://mathworld.wolfram.com/BipartiteGraph.html)
- * ![Whitman](http://www.whitman.edu/mathematics/cgt_online/section05.04.html)
- * 
-
+ * [Wolfram](http://mathworld.wolfram.com/BipartiteGraph.html)
+ * [Whitman](http://www.whitman.edu/mathematics/cgt_online/section05.04.html)
 
 -------------------------------------------
 #### Exercise Answers: 
