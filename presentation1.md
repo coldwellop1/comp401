@@ -38,7 +38,9 @@
 	![Image cannot load. See ex_1.png.](proj01/prep/ex_1.png)
 
   2. Is the above graph bipartite?
+  
   3. Looking at the set of ordered pairs you have been given, is this a directed or undirected graph?
+  
   4. What are some examples of bipartite graphs you've seen in the past?
 
 -----------------
