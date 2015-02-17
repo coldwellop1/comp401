@@ -1,7 +1,8 @@
 #Bipartite Graphs
 
 #### Questions to think about:
-  * How would we represent a graph as a data structure?
+  * How can we represent a graph as a data structure?
+  * What would an algorithm look like to check if a graph is bipartite?
   * What are some uses of bipartite graphs?
 
 #### Basic Information on Graphs:
