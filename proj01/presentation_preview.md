@@ -26,5 +26,5 @@
 #### Exercise Answers: 
 
   1. ![Image cannot load. See ans_1.png.](prep/ans_1.png)
-  2. No, d connects to both b and g, which means we cannot split the nodes into two groups where no nodes of the same group share an edge.
+  2. No, d connects to both b and g, which means we cannot split the nodes into two groups where no nodes of the same group share an edge.  Similarly, a and b are connected and a is connected to e and f as well.
   3. We cannot fully tell unless it is stated, but this appears to be an undirected graph because a directed graph would need both (a, b) and (b, a) in order to connect a and b fully.
