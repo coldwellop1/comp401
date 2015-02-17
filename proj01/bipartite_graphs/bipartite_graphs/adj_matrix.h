@@ -20,13 +20,17 @@ public:
 	void removeEdge(int from, int to);
 	bool checkEdge(int from, int to);
 	void print(bool zeros);
-	bool check_bipartite();
 
+	bool is_bipartite();
+	void printArrays();
 
 private:
 	int** matrix;
 	int nodeCount;
 	bool directed;
+	bool bipartite;
+	int* red;
+	int* blue;
 
 	//initialize matrix with no edges
 	void initialize();
@@ -43,7 +47,10 @@ private:
 	// display graph
 	void print_h(bool zeros);
 	bool visited;
-	bool check_bipartite_h();
+
+	// bipartite check helper functions
+	void check_bipartite(int from, int to);
+	void remove_bipart_checker(int from, int to);
 };
 
 #endif  //adj_matrix_H

@@ -1,8 +1,9 @@
-﻿Build started 2/12/2015 5:56:50 PM.
+﻿Build started 2/17/2015 12:59:53 AM.
      1>Project "C:\Users\Em\Documents\GitHub\comp401\proj01\bipartite_graphs\bipartite_graphs\bipartite_graphs.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\bipartite_graphs.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt adj_matrix.cpp bipartite_graphs.cpp
          adj_matrix.cpp
+     1>c:\users\em\documents\github\comp401\proj01\bipartite_graphs\bipartite_graphs\adj_matrix.cpp(304): warning C4553: '==' : operator has no effect; did you intend '='?
          Generating Code...
          Skipping... (no relevant changes detected)
          bipartite_graphs.cpp
@@ -15,4 +16,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:05.56
+Time Elapsed 00:00:01.17

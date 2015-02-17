@@ -155,8 +155,12 @@ void menu(adj_matrix myGraph){
 		myGraph.addEdge(from, to);
 	else if (choice == "2")
 		myGraph.removeEdge(from, to);
-	else if (choice == "3")
-		myGraph.checkEdge(from, to);
+	else if (choice == "3"){
+		if (myGraph.checkEdge(from, to))
+			cout << "Edge Exists." << endl;
+		else
+			cout << "No Edge Found." << endl;
+	}
 	else if (choice == "4"){
 		cout << "Your Graph" << endl;
 		cout << "-------------------" << endl;
@@ -170,17 +174,20 @@ void menu(adj_matrix myGraph){
 		system("pause");
 	}
 	else if (choice == "6"){
-		bool bipartite = myGraph.check_bipartite();
+		bool bipartite = myGraph.is_bipartite();
 		if (bipartite)
 			cout << "This graph is bipartite" << endl;
 		else
 			cout << "This graph is NOT bipartite" << endl;
 		system("pause");
 	}
+	else if (choice == "7"){
+		myGraph.printArrays();
+	}
 	else if (choice == "0"){
 		myGraph.~myGraph();
 		return;
 	}
-
+	else{}
 	menu(myGraph);
 }
