@@ -1,15 +1,17 @@
 #Bipartite Graphs
 
 #### Questions to think about:
-
-  * What is a graph?
-  * What makes a graph 'bipartite'?
   * How would we represent a graph as a data structure?
   * What are some uses of bipartite graphs?
 
-#### Readings:
-  * [Graphs](http://en.wikipedia.org/wiki/Graph_%28mathematics%29)
-  * [Bipartite](http://en.wikipedia.org/wiki/Bipartite_graph)
+#### Basic Information:
+**What is a graph?**
+	> A graph is a collection of nodes and edges that show the relationship between
+	> objects in a given set.  Each node is labeled to show which object it represents,
+	> and each edge connects (a)two nodes to each other or (b)one node to itself.
+	> ![Image cannot load. See a.png.](prep/a.png)   ![Image cannot load. See b.png.](prep/b.png)
+
+**What makes a graph 'bipartite'?**
 
 #### Exercises:
 
