@@ -8,9 +8,18 @@
 **What is a graph?**
 > A graph is a collection of nodes and edges that show the relationship between
 > objects in a given set.  Each node is labeled to show which object it represents,
-> and each edge connects (a) two nodes to each other or (b) one node to itself.
-
+> and each edge connects (a) two nodes to each other or (b) one node to itself. 
 > ![Image cannot load. See ab.png.](prep/ab.png)
+> There are two different kinds of edges:
+
+>   1. **Undirected Edge** - an undirected edge is used to connect two nodes 
+>      together, and is shown as a line between the two nodes.
+>   2. **Directed Edge** - a directed edge is used to connect two nodes together
+>      *in one direction*.  A directed edge is shown as an arrow coming out of
+>      one node and pointing at the second.  Example c below shows a directed 
+>      edge from Node 4 to Node 5.  A directed edge is similar to a one way road.
+>      In the example below, this means we can get from Node 4 to Node 5, but not
+>      from Node 5 to Node 4.
 
 **What makes a graph 'bipartite'?**
 
