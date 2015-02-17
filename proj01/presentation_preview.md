@@ -23,6 +23,8 @@
 >      In the example below, this means we can get from Node 4 to Node 5, but not
 >      from Node 5 to Node 4.
 
+> ![Immage cannot load. See c.png.](prep/c.png)
+
 **What makes a graph 'bipartite'?**
 
 #### Exercises:
