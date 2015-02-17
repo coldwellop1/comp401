@@ -13,8 +13,18 @@
 
 #### Exercises:
 
- 1. Use the following ordered pairs to connect the directed graph:
-    (a, b)  (f, a)
-    (c, e)  (g, d)
-    (c, f)  (d, b)
-    (e, a)  (f, g)
+  1. Use the given ordered pairs to connect the graph:
+
+	![Image cannot load. See ex_1.png.](prep/ex_1.png)
+
+  2. Is the above graph bipartite?
+  3. Looking at the set of ordered pairs you have been given, is this a directed or undirected graph?
+
+
+
+-------------------------------------------
+#### Exercise Answers: 
+
+  1. ![Image cannot load. See ans_1.png.](prep/ans_1.png)
+  2. No, d connects to both b and g, which means we cannot split the nodes into two groups where no nodes of the same group share an edge.  Similarly, a and b are connected and a is connected to e and f as well.
+  3. We cannot fully tell unless it is stated, but this appears to be an undirected graph because a directed graph would need both (a, b) and (b, a) in order to connect a and b fully.
