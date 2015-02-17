@@ -20,6 +20,7 @@ public:
 	void removeEdge(int from, int to);
 	bool checkEdge(int from, int to);
 	void print(bool zeros);
+	bool check_bipartite();
 
 
 private:
@@ -41,6 +42,8 @@ private:
 
 	// display graph
 	void print_h(bool zeros);
+	bool visited;
+	bool check_bipartite_h();
 };
 
 #endif  //adj_matrix_H

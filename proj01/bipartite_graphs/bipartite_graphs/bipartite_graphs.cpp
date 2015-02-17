@@ -132,7 +132,7 @@ void menu(adj_matrix myGraph){
 	cout << "3. Determine if there is an edge between two nodes" << endl;
 	cout << "4. Display graph" << endl;
 	cout << "5. Display graph (edges only)" << endl;
-	//cout << "6. Export graph to file" << endl;
+	cout << "6. Check if graph is bipartite" << endl;
 	cout << "0. Quit" << endl;
 	cin >> userInput;
 	cout << endl;
@@ -167,6 +167,14 @@ void menu(adj_matrix myGraph){
 		cout << "Your Graph" << endl;
 		cout << "-------------------" << endl;
 		myGraph.print(false);		//false: we don't want zeros
+		system("pause");
+	}
+	else if (choice == "6"){
+		bool bipartite = myGraph.check_bipartite();
+		if (bipartite)
+			cout << "This graph is bipartite" << endl;
+		else
+			cout << "This graph is NOT bipartite" << endl;
 		system("pause");
 	}
 	else if (choice == "0"){

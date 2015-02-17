@@ -180,4 +180,54 @@ void adj_matrix::print_h(bool zeros)
 	cout << endl << endl << endl;
 }
 
+bool adj_matrix::check_bipartite()
+{
+	return check_bipartite_h();
+}
 
+bool adj_matrix::check_bipartite_h()
+{
+	int *red = new int[nodeCount];	
+	int *blue = new int[nodeCount];
+	bool color = false;	// false = red, true = blue
+	int redCount = 0;
+	int blueCount = 0;
+	
+	//populate arrays and check for overlapping values between arrays
+	for (int i = 0; i < nodeCount; i++){
+		for (int j = 0; j < nodeCount; j++)
+			if (matrix[i][j] == 1){
+				if (color){	//if we're doing blue now
+					for (int k = 0; k < redCount; k++){
+						if (red[k] == i)
+							return false;	//if the value already exists in the other array, it is not bipartite.
+					}
+					for (int k = 0; k < blueCount; k++){
+						if (blue[k] == i){}	//if the value already exists in the array, it will not be added again
+						else{				// add the value to the array
+							blue[blueCount] = i;
+							blueCount++;
+							color = true;	//switch to blue
+						}
+					}
+				}
+				else{		//if we're doing red now
+					for (int k = 0; k < blueCount; k++){
+						if (blue[k] == i)
+							return false;	//if the value already exists in the other array, it is not bipartite.
+					}
+					for (int k = 0; k < redCount; k++){
+						if (red[k] == i){}	//if the value already exists in the array, it will not be added again
+						else{				// add the value to the array
+							red[redCount] = i;
+							redCount++;
+							color = true;	//switch to blue
+						}
+					}
+				}
+				i = j;
+				j = 0;
+		}
+	}
+	return true;	//if it has not yet returned false, it is bipartite.
+}
