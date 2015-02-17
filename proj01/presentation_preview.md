@@ -13,8 +13,6 @@
 
 #### Exercises:
 
- 1. Use the following ordered pairs to connect the directed graph:
-    (a, b)  (f, a)
-    (c, e)  (g, d)
-    (c, f)  (d, b)
-    (e, a)  (f, g)
+ 1. Use the given ordered pairs to connect the directed graph:
+
+   ![Image cannot load. See ex_1.png.](/prep/ex_1.png)
