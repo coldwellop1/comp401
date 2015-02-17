@@ -39,7 +39,13 @@
 
   2. Is the above graph bipartite?
   3. Looking at the set of ordered pairs you have been given, is this a directed or undirected graph?
+  4. What are some examples of bipartite graphs you've seen in the past?
 
+-----------------
+#### Further Reading:
+ * ![Wolfram](http://mathworld.wolfram.com/BipartiteGraph.html)
+ * ![Whitman](http://www.whitman.edu/mathematics/cgt_online/section05.04.html)
+ * 
 
 
 -------------------------------------------
@@ -48,3 +54,4 @@
   1. ![Image cannot load. See ans_1.png.](prep/ans_1.png)
   2. No, d connects to both b and g, which means we cannot split the nodes into two groups where no nodes of the same group share an edge.  Similarly, a and b are connected and a is connected to e and f as well.
   3. We cannot fully tell unless it is stated, but this appears to be an undirected graph because a directed graph would need both (a, b) and (b, a) in order to connect a and b fully.
+  4. Well for starters, **all** trees are bipartite graphs!
