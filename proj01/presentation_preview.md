@@ -13,6 +13,9 @@
 
 #### Exercises:
 
- 1. Use the given ordered pairs to connect the directed graph:
+ 1. Use the given ordered pairs to connect the graph:
 
    ![Image cannot load. See ex_1.png.](prep/ex_1.png)
+
+ 2. Is the above graph bipartite?
+ 3. Looking at the set of ordered pairs you have been given, is this a directed or undirected graph?
