@@ -180,19 +180,21 @@ bool adj_matrix::is_bipartite(){
 		}
 		start++;
 	}
-	return is_bipartite_h(start);
-}
-
-//Private helper function for determining bipartedness
-bool adj_matrix::is_bipartite_h(int start){
-	//create array to hold groups and temporary integer for popping the front vertice from the queue
+	//Create array to hold groups
 	int* groups = new int[nodeCount];
-	int temp;
-	int currGroup;
-
+	
 	//Populate array with -1 to represent an unassigned group
 	for (int i = 0; i < nodeCount; i++)
 		groups[i] = -1;
+		
+	return is_bipartite_h(start, groups);
+}
+
+//Private helper function for determining bipartedness
+bool adj_matrix::is_bipartite_h(int start, int* groups[]){
+	//create temporary integers for popping the front vertice from the queue and keeping track of what group we're using
+	int temp;
+	int currGroup;
 
 	//Assign first node to first group
 	groups[start] = 0;
@@ -227,5 +229,11 @@ bool adj_matrix::is_bipartite_h(int start){
 				return false;
 		}
 	}
+	//if the graph is bipartite so far(will be if we've gotten here) and there are any values that are still assigned -1, recall function with first index of groups that is still -1
+	for(int i = 0; i < nodeCount; i++)
+		if (groups[i] == -1)
+			is_bipartite_h(i, groups);
+			
+	//Otherwise we've checked every node and the graph is bipartite
 	return true;
 }
