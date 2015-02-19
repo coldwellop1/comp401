@@ -165,6 +165,10 @@ void adj_matrix::print_h(bool edges){
 //Public function to check if graph is bipartite
 //Finds first edge and calls helper function to determine bipartiteness
 bool adj_matrix::is_bipartite(){
+	//By definition, if a graph is bipartite, it cannot be directed
+	if (directed)
+		return false;
+		
 	//integers to hold edge end nodes
 	int start = 0;
 	int end = 0;
