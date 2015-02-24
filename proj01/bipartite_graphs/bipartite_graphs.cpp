@@ -8,10 +8,12 @@
 //
 
 #include "stdafx.h"
-#include "adj_matrix.h"
+
 #include <fstream>
 #include <iostream>
 #include <string>
+
+#include "adj_matrix.h"
 
 //Global variables
 string userInput;	//will hold the user's input for each prompt
