@@ -7,7 +7,12 @@ using namespace std;
 adj_matrix::~adj_matrix(){
 }
 
-//Constructor: accepts positive integer representing the number of nodes in the graph.
+//Constructor
+//INPUTS: 
+//	an integer, n, that represents the number of nodes to be created for the graph in the matrix
+//	a boolean, d, that represents whether(t) or not(f) the graph should be directed
+//OUTPUTS: 
+//	adj_matrix is created and available for the user to manipulate
 adj_matrix::adj_matrix(int n, bool d){
 	this->nodeCount = n;
 	this->directed = d;
@@ -28,9 +33,12 @@ adj_matrix::adj_matrix(int n, bool d){
 	}
 }
 
-//Public function to add an edge to the graph.
-//Checks that the selected nodes are valid and that there is no edge already there.
-//Calls helper function to add edge.
+//Public function to add an edge to the graph.  Checks that the selected nodes are valid and that there is no edge already there.  Calls helper function to add edge.
+//INPUTS: 
+//	an integer, from, that represents the first node the edge connects to 
+//	an integer, to, that represents the second node the edge connects to
+//OUTPUTS: 
+//	message is printed to screen confirming the addition of the edge to the graph or alerting the user of the failure to add the edge.
 void adj_matrix::addEdge(int from, int to){
 	//check that values are valid
 	if ((0 >= from) || (from > nodeCount) || (0 >= to) || (to > nodeCount))
@@ -50,8 +58,12 @@ void adj_matrix::addEdge(int from, int to){
 	}
 }
 
-//Private helper function for adding an edge.  Accesses private data member 'matrix' 
-//and assigns the integer 1 to matrix[from][to] 
+//Private helper function for adding an edge.  Accesses private data member 'matrix' and assigns the integer 1 to matrix[from][to] 
+//INPUTS: 
+//	an integer, from, that represents the first node the edge connects to 
+//	an integer, to, that represents the second node the edge connects to
+//OUTPUTS: 
+//	none, edge is added to graph
 void adj_matrix::addEdge_h(int from, int to){
 	matrix[from][to] = 1;
 
@@ -63,6 +75,11 @@ void adj_matrix::addEdge_h(int from, int to){
 //Public function to check if an edge is present between two nodes.
 //Calls helper function to check edge
 //Returns true if there exists an edge and false if there is no edge.
+//INPUTS: 
+//	an integer, from, that represents the first node the edge connects to 
+//	an integer, to, that represents the second node the edge connects to
+//OUTPUTS: 
+//	returns a boolean representing whether or not there exists a node between the two selected edges
 bool adj_matrix::checkEdge(int from, int to){
 	if (checkEdge_h(from - 1, to - 1))
 		return true;
@@ -72,6 +89,11 @@ bool adj_matrix::checkEdge(int from, int to){
 
 //Private helper function for checking if an edge exists on the graph.  Accesses 
 //private data member 'matrix'
+//INPUTS: 
+//	an integer, from, that represents the first node the edge connects to 
+//	an integer, to, that represents the second node the edge connects to
+//OUTPUTS: 
+//	returns a boolean representing whether or not there exists a node between the two selected edges
 bool adj_matrix::checkEdge_h(int from, int to){
 	if (matrix[from][to] == 1)
 		return true;
@@ -82,6 +104,11 @@ bool adj_matrix::checkEdge_h(int from, int to){
 //Public function to remove an edge from the graph.
 //Checks that nodes are valid and the edge exists in the graph.  Removes edge if 
 //it exists.
+//INPUTS: 
+//	an integer, from, that represents the first node the edge connects to 
+//	an integer, to, that represents the second node the edge connects to
+//OUTPUTS: 
+//	message is printed to screen confirming the removal of the edge to the graph or alerting the user of the failure to remove the edge.
 void adj_matrix::removeEdge(int from, int to){
 	//check that values are valid
 	if ((0 >= from) || (from > nodeCount) || (0 >= to) || (to > nodeCount))
@@ -103,6 +130,11 @@ void adj_matrix::removeEdge(int from, int to){
 
 //Private helper function for removing an edge from the graph.  Accesses private 
 //data member 'matrix'
+//INPUTS: 
+//	an integer, from, that represents the first node the edge connects to 
+//	an integer, to, that represents the second node the edge connects to
+//OUTPUTS: 
+//	none, edge is removed from graph
 void adj_matrix::removeEdge_h(int from, int to){
 	matrix[from][to] = 0;
 
@@ -113,9 +145,12 @@ void adj_matrix::removeEdge_h(int from, int to){
 
 //Public function to display matrix of graph to the console
 //Checks to make sure the nodeCount of the matrix is within the limits 
-//to be displayed (0 < nodeCount < 20) Calls private function, accepts a bool, 
-//depending on whether or not the user wishes to display just the edges (true) 
-//or the whole matrix (false)
+//to be displayed (0 < nodeCount < 20) Calls private function
+//INPUTS: 
+//	boolean representing whether or not the user wishes to print the 0's along with the 1's
+//
+//OUTPUTS: 
+//	prints error message to the console if graph has 20 or more edges
 void adj_matrix::print(bool edges){
 	if ((0 >= nodeCount) || (20 <= nodeCount)){
 		cout << "ERROR: Matrix node count is outside given parameters.  To display, node count must be between 0 and 20." << endl;
@@ -125,6 +160,11 @@ void adj_matrix::print(bool edges){
 }
 
 //Private helper function for displaying the matrix to the console
+//INPUTS: 
+//	boolean representing whether or not the user wishes to print the 0's along with the 1's
+//
+//OUTPUTS: 
+//	prints matrix to screen, either including the 0's or not.
 void adj_matrix::print_h(bool edges){
 	//Display horizontal indices
 	cout << "    ";
@@ -164,6 +204,11 @@ void adj_matrix::print_h(bool edges){
 
 //Public function to check if graph is bipartite
 //Finds first edge and calls helper function to determine bipartiteness
+//INPUTS: 
+//	none
+//
+//OUTPUTS: 
+//	boolean representing whether or not the graph is bipartite
 bool adj_matrix::is_bipartite(){
 	//QUESTIONABLE
 	//By definition, if a graph is bipartite, it cannot be directed
@@ -192,6 +237,11 @@ bool adj_matrix::is_bipartite(){
 }
 
 //Private helper function for determining bipartedness
+//INPUTS: 
+//	an integer representing the node in the graph to start tracking from
+//	an array of integers holding/to hold the group assignments of each node
+//OUTPUTS: 
+//	a boolean representing whether or not the graph is bipartite
 bool adj_matrix::is_bipartite_h(int start, int* groups[]){
 	//create temporary integers for popping the front vertice from the queue and keeping track of what group we're using
 	int temp;
