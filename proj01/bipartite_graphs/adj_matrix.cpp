@@ -14,21 +14,21 @@ adj_matrix::~adj_matrix(){
 //OUTPUTS: 
 //	adj_matrix is created and available for the user to manipulate
 adj_matrix::adj_matrix(int nodeC, bool director){
-	this->nodeCount = nodeC;
-	this->directed = director;
+	this->nodeCount_ = nodeC;
+	this->directed_ = director;
 
 	//create an integer array of length nodeC
-	matrix = new int*[nodeCount];
+	matrix_ = new int*[nodeCount_];
 
 	// create arrays of length nodeC within each block of the first array, creating a matrix.
-	for (int i = 0; i < nodeCount; i++){
-		matrix[i] = new int[nodeCount];
+	for (int i = 0; i < nodeCount_; i++){
+		matrix_[i] = new int[nodeCount_];
 	}
 
 	// initialize the matrix
-	for (int i = 0; i < nodeCount; i++){
-		for (int j = 0; j < nodeCount; j++){
-			matrix[i][j] = 0;
+	for (int i = 0; i < nodeCount_; i++){
+		for (int j = 0; j < nodeCount_; j++){
+			matrix_[i][j] = 0;
 		}
 	}
 }
@@ -41,7 +41,7 @@ adj_matrix::adj_matrix(int nodeC, bool director){
 //	message is printed to screen confirming the addition of the edge to the graph or alerting the user of the failure to add the edge.
 void adj_matrix::addEdge(int from, int to){
 	//check that values are valid
-	if ((0 >= from) || (from > nodeCount) || (0 >= to) || (to > nodeCount))
+	if ((0 >= from) || (from > nodeCount_) || (0 >= to) || (to > nodeCount_))
 		cout << "Error.  Invalid Input." << endl;
 
 	//check that edge does not already exist
@@ -51,7 +51,7 @@ void adj_matrix::addEdge(int from, int to){
 	//place edge(s)
 	else{
 		addEdge_h(from - 1, to - 1);
-		if (directed == true)
+		if (directed_ == true)
 			cout << "Added " << from << "->" << to << "." << endl;
 		else
 			cout << "Added " << from << "--" << to << "." << endl;
@@ -65,11 +65,11 @@ void adj_matrix::addEdge(int from, int to){
 //OUTPUTS: 
 //	none, edge is added to graph
 void adj_matrix::addEdge_h(int from, int to){
-	matrix[from][to] = 1;
+	matrix_[from][to] = 1;
 
 	// if graph is NOT directed, place a second edge going in the other direction
-	if (directed == false)
-		matrix[to][from] = 1;
+	if (directed_ == false)
+		matrix_[to][from] = 1;
 }
 
 //Public function to check if an edge is present between two nodes.
@@ -95,7 +95,7 @@ bool adj_matrix::checkEdge(int from, int to){
 //OUTPUTS: 
 //	returns a boolean representing whether or not there exists a node between the two selected edges
 bool adj_matrix::checkEdge_h(int from, int to){
-	if (matrix[from][to] == 1)
+	if (matrix_[from][to] == 1)
 		return true;
 	else
 		return false;
@@ -111,7 +111,7 @@ bool adj_matrix::checkEdge_h(int from, int to){
 //	message is printed to screen confirming the removal of the edge to the graph or alerting the user of the failure to remove the edge.
 void adj_matrix::removeEdge(int from, int to){
 	//check that values are valid
-	if ((0 >= from) || (from > nodeCount) || (0 >= to) || (to > nodeCount))
+	if ((0 >= from) || (from > nodeCount_) || (0 >= to) || (to > nodeCount_))
 		cout << "Error.  Invalid Input." << endl;
 
 	//check that edge does not already exist
@@ -121,7 +121,7 @@ void adj_matrix::removeEdge(int from, int to){
 	//remove edge(s)
 	else{
 		removeEdge_h(from - 1, to - 1);
-		if (directed == true)
+		if (directed_ == true)
 			cout << "Removed " << from << "->" << to << "." << endl;
 		else
 			cout << "Removed " << from << "--" << to << "." << endl;
@@ -136,11 +136,11 @@ void adj_matrix::removeEdge(int from, int to){
 //OUTPUTS: 
 //	none, edge is removed from graph
 void adj_matrix::removeEdge_h(int from, int to){
-	matrix[from][to] = 0;
+	matrix_[from][to] = 0;
 
 	// if graph is NOT directed, remove second edge going in other direction
-	if (directed == false)
-		matrix[to][from] = 0;
+	if (directed_ == false)
+		matrix_[to][from] = 0;
 }
 
 //Public function to display matrix of graph to the console
@@ -152,7 +152,7 @@ void adj_matrix::removeEdge_h(int from, int to){
 //OUTPUTS: 
 //	prints error message to the console if graph has 20 or more edges
 void adj_matrix::print(bool edges){
-	if ((0 >= nodeCount) || (20 <= nodeCount)){
+	if ((0 >= nodeCount_) || (20 <= nodeCount_)){
 		cout << "ERROR: Matrix node count is outside given parameters.  To display, node count must be between 0 and 20." << endl;
 	}
 	else
@@ -168,7 +168,7 @@ void adj_matrix::print(bool edges){
 void adj_matrix::print_h(bool edges){
 	//Display horizontal indices
 	cout << "    ";
-	for (int i = 1; i <= nodeCount; i++){
+	for (int i = 1; i <= nodeCount_; i++){
 		cout << i;
 		//FORMATTING: 3 spaces for 1 digit values, 2 spaces for 2 digit values.
 		if (i < 10)
@@ -179,22 +179,22 @@ void adj_matrix::print_h(bool edges){
 	cout << endl;
 
 	//Display vertical indices and values within matrix
-	for (int j = 0; j < nodeCount; j++){
+	for (int j = 0; j < nodeCount_; j++){
 		//FORMATTING: 3 spaces for 1 digit values, 2 spaces for 2 digit values.
 		if (j < 9)
 			cout << j + 1 << "   ";
 		else
 			cout << j + 1 << "  ";
-		for (int k = 0; k < nodeCount; k++){
+		for (int k = 0; k < nodeCount_; k++){
 			//if we don't want to display 0's, insert space instead
-			if ((edges == false) && (matrix[j][k] == 0))
+			if ((edges == false) && (matrix_[j][k] == 0))
 				cout << " ";
 			//otherwise, insert value of matrix[j][k] (0)
 			else
-				cout << matrix[j][k];
+				cout << matrix_[j][k];
 			//if we haven't reached the end of our line, print a gap to 
 			//preceed the next value
-			if (k + 1 != nodeCount)
+			if (k + 1 != nodeCount_)
 				cout << "   ";
 		}
 		cout << endl;
@@ -220,17 +220,17 @@ bool adj_matrix::is_bipartite(){
 	int end = 0;
 
 	//Find first edge in graph
-	while ((matrix[start][end] == 0) && (start < nodeCount)){
-		while ((matrix[start][end] == 0) && (end < nodeCount)){
+	while ((matrix_[start][end] == 0) && (start < nodeCount_)){
+		while ((matrix_[start][end] == 0) && (end < nodeCount_)){
 			end++;
 		}
 		start++;
 	}
 	//Create array to hold groups
-	int* groups = new int[nodeCount];
+	int* groups = new int[nodeCount_];
 	
 	//Populate array with -1 to represent an unassigned group
-	for (int i = 0; i < nodeCount; i++)
+	for (int i = 0; i < nodeCount_; i++)
 		groups[i] = -1;
 		
 	return is_bipartite_h(start, groups);
@@ -263,9 +263,9 @@ bool adj_matrix::is_bipartite_h(int start, int* groups[]){
 		vertices.pop();
 
 		//find all ungrouped vertices with edges connecting to the vertice at the front of the queue
-		for (int i = 0; i < nodeCount; i++){
+		for (int i = 0; i < nodeCount_; i++){
 			//determine if vertice is adjacent and has been grouped
-			if ((matrix[temp][i] == 1) && (groups[i] == -1)){
+			if ((matrix_[temp][i] == 1) && (groups[i] == -1)){
 				//figure out which group 'temp' is part of and assign the current vertice to be in the other
 				if (groups[temp] == 1)
 					groups[i] = 0;
@@ -277,12 +277,12 @@ bool adj_matrix::is_bipartite_h(int start, int* groups[]){
 			}
 
 			//Otherwise, if the vertice is adjacent and already assigned to a group, check to make sure the two adjacent vertices aren't part of the same group.   If they are, return false
-			else if ((matrix[temp][i] == 1) && (groups[temp] == groups[i]))
+			else if ((matrix_[temp][i] == 1) && (groups[temp] == groups[i]))
 				return false;
 		}
 	}
 	//if the graph is bipartite so far(will be if we've gotten here) and there are any values that are still assigned -1, recall function with first index of groups that is still -1
-	for(int i = 0; i < nodeCount; i++)
+	for(int i = 0; i < nodeCount_; i++)
 		if (groups[i] == -1)
 			is_bipartite_h(i, groups);
 			
