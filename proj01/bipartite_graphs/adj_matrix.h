@@ -25,9 +25,6 @@ public:
 	string title;
 
 private:
-	int** matrix;
-	int nodeCount;
-	bool directed;
 
 	// add edge helper function
 	void addEdge_h(int from, int to);
@@ -42,6 +39,10 @@ private:
 	void print_h(bool zeros);
 
 	bool is_bipartite_h(int start);
+	
+	int** matrix;
+	int nodeCount;
+	bool directed;
 };
 
 #endif  //ADJ_MATRIX_H
