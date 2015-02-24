@@ -211,7 +211,7 @@ void adj_matrix::print_h(bool edges){
 //	boolean representing whether or not the graph is bipartite
 bool adj_matrix::is_bipartite(){
 	//QUESTIONABLE
-	//By definition, if a graph is bipartite, it cannot be directed
+	//If a graph is bipartite, it cannot be directed ????
 	//if (directed)
 	//	return false;
 		
@@ -243,9 +243,6 @@ bool adj_matrix::is_bipartite(){
 //OUTPUTS: 
 //	a boolean representing whether or not the graph is bipartite
 bool adj_matrix::is_bipartite_h(int start, int* groups[]){
-	//create temporary integers for popping the front vertice from the queue and keeping track of what group we're using
-	int temp;
-	int currGroup;
 
 	//Assign first node to first group
 	groups[start] = 0;
@@ -255,6 +252,10 @@ bool adj_matrix::is_bipartite_h(int start, int* groups[]){
 	//Enqueue starting node
 	vertices.push(start);
 
+	//create temporary integers for popping the front vertice from the queue and keeping track of what group we're using
+	int temp;
+	int currGroup;
+	
 	//while the queue isn't empty, perform assignments 
 	while (!vertices.empty()){
 		//assign front node to temporary integer and remove from queue
