@@ -1,5 +1,5 @@
-#ifndef adj_matrix_H
-#define adj_matrix_H
+#ifndef ADJ_MATRIX_H
+#define ADJ_MATRIX_H
 
 #pragma once
 #include <iostream>
@@ -44,4 +44,4 @@ private:
 	bool is_bipartite_h(int start);
 };
 
-#endif  //adj_matrix_H
+#endif  //ADJ_MATRIX_H
