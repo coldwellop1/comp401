@@ -6,11 +6,6 @@
 // CONTENTS:
 // bipartite_graphs.cpp contains the main driver code for creating a graph on the console.  The program provides the user with the options of creating their own graph or importing one from a file.  The user is then able to add and delete edges between nodes, check for the existance of an edge, display the entire graph to the console, or display the graph by only showing the existing edges between nodes. 
 //
-// REQUIRED IMPORT FILE FORMAT: 
-// Any file to be imported into this program as graph data must have the following format:
-//	- The first line must include ONLY the number of nodes in the graph
-//	- The second line must include either a 1 (Yes) or a 0 (No), representing whether or not the user requires the graph to be directed.
-//	- The remaining lines will each include an ordered pair of nodes, separated by a comma and then a space, representing where an edge exists. For a directed graph, ( ex. 4, 5) means that an edge will be created coming out of node 4 and going into node 5.
 
 #include "stdafx.h"
 #include "adj_matrix.h"
@@ -33,6 +28,7 @@ void menu(adj_matrix myGraph);
 void createFromScratch();
 void importFromFile();
 
+//main driver function
 void main(){
 	//Display primary menu to console
 	cout << "Please select one of the following: " << endl;
@@ -58,7 +54,12 @@ void main(){
 	}
 }
 
-//
+//Function is called if user selects to create a graph from scratch
+//INPUTS: 
+//	instructions entered from the command prompt by the user
+//OUTPUTS:
+//	prompts are printed to the screen, walking the user through each step of the process
+//	adj_matrix is created with the parameters set by the user
 void createFromScratch(){
 	//Display header
 	cout << "Creating a graph from scratch" << endl;
@@ -96,7 +97,17 @@ void createFromScratch(){
 	menu(myGraph);
 }
 
-//
+//Function is called if user selects to import a graph from a file
+//INPUTS:
+//	REQUIRED IMPORT FILE FORMAT: 
+//	Any file to be imported into this program as graph data must have the following format:
+//		- The first line must include ONLY the number of nodes in the graph
+//		- The second line must include either a 1 (Yes) or a 0 (No), representing whether or not the user requires the graph to be directed.
+//		- The remaining lines will each include an ordered pair of nodes, separated by a comma and then a space, representing where an edge exists. For a directed graph, ( ex. 4, 5) means that an edge will be created coming out of node 4 and going into node 5.
+//	User is also prompted to add a title to the graph.
+//OUTPUTS:
+//	prompts are printed to the screen, walking the user through each step of the process
+//	adj_matrix is created with the parameters set by the file
 void importFromFile(){
 	//Display header
 	cout << "Importing graph from file" << endl;
@@ -165,7 +176,12 @@ void importFromFile(){
 	}
 }
 
-//
+//Provides menu to console, accepts user input, and calls the appropriate functions based on user input
+//INPUTS:
+//	User inputs to console responses based on the prompts
+//OUTPUTS:
+//	Prompts printed to console providing user with directions
+//	functions are called based on user input
 void menu(adj_matrix myGraph){
 	//Create space before menu
 	cout << endl << endl << endl;
