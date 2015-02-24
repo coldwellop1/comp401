@@ -22,7 +22,7 @@ public:
 	bool checkEdge(int from, int to);
 	void print(bool zeros);
 	bool is_bipartite();
-	string title;
+	string title_;
 
 private:
 
@@ -40,9 +40,9 @@ private:
 
 	bool is_bipartite_h(int start);
 	
-	int** matrix;
-	int nodeCount;
-	bool directed;
+	int** matrix_;
+	int nodeCount_;
+	bool directed_;
 };
 
 #endif  //ADJ_MATRIX_H
