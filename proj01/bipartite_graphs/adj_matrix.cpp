@@ -9,18 +9,18 @@ adj_matrix::~adj_matrix(){
 
 //Constructor
 //INPUTS: 
-//	an integer, n, that represents the number of nodes to be created for the graph in the matrix
-//	a boolean, d, that represents whether(t) or not(f) the graph should be directed
+//	an integer, nodeC, that represents the number of nodes to be created for the graph in the matrix
+//	a boolean, director, that represents whether(t) or not(f) the graph should be directed
 //OUTPUTS: 
 //	adj_matrix is created and available for the user to manipulate
-adj_matrix::adj_matrix(int n, bool d){
-	this->nodeCount = n;
-	this->directed = d;
+adj_matrix::adj_matrix(int nodeC, bool director){
+	this->nodeCount = nodeC;
+	this->directed = director;
 
-	//create an integer array of length n
+	//create an integer array of length nodeC
 	matrix = new int*[nodeCount];
 
-	// create arrays of length n within each block of the first array, creating a matrix.
+	// create arrays of length nodeC within each block of the first array, creating a matrix.
 	for (int i = 0; i < nodeCount; i++){
 		matrix[i] = new int[nodeCount];
 	}
