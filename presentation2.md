@@ -11,3 +11,4 @@
 #####Background Readings:
 * [American Bar Association: What are the limits of employee privacy?](http://www.americanbar.org/publications/gp_solo/2012/november_december2012priva
 cyandconfidentiality/what_are_limits_employee_privacy.html)
+* [Managing User Perceptions](http://delivery.acm.org/10.1145/220000/219678/p40-weisband.pdf?ip=155.47.177.118&id=219678&acc=ACTIVE%20SERVICE&key=AA86BE8B6928DDC7%2E9E3C8D4A3D49DF70%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&CFID=647629694&CFTOKEN=48136781&__acm__=1427143820_1b29879c92eb5afdcfc236d9ea8a351c)
