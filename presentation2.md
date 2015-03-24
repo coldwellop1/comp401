@@ -9,6 +9,6 @@
   * How do you think cases of employee email privacy are handled in a court of law?
 
 #####Background Readings:
-* [American Bar Association: What are the limits of employee privacy?](http://www.americanbar.org/publications/gp_solo/2012/november_december2012priva
-cyandconfidentiality/what_are_limits_employee_privacy.html)
-* [Managing User Perceptions](http://delivery.acm.org/10.1145/220000/219678/p40-weisband.pdf?ip=155.47.177.118&id=219678&acc=ACTIVE%20SERVICE&key=AA86BE8B6928DDC7%2E9E3C8D4A3D49DF70%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&CFID=647629694&CFTOKEN=48136781&__acm__=1427143820_1b29879c92eb5afdcfc236d9ea8a351c)
+* [Electronic Communications and Privacy Act of 1986](https://it.ojp.gov/default.aspx?area=privacy&page=1285)
+* [Social Media and Our Misconceptions of the Realities](http://dx.doi.org/10.1080/13600834.2013.805923)
+* [Falmouth Fire Fighters Union v. Town of Falmouth, MA](http://employmentmattersblog.default.wp1.lexblog.com/files/2013/09/email-privacy-MA.pdf)
