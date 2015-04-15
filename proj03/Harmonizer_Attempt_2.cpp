@@ -117,14 +117,8 @@ void thirdMenu(scale ourScale){
 		thirdMenu(ourScale);
 		break;
 	case 3:
-		cout << "Which kind of harmony would you like to write?" << endl
-			<< "	1. Tight Harmony - commonly used for vocal harmonies, utilizes thirds and sixths." << endl
-			<< "	2. Chordal Harmony - utilizes notes from the current chord. (DEFAULT)" << endl;
-		cin >> user_input_4;
-		if (user_input_4 == "1")
-			ourScale.tight_harmony();
-		else
-			//ourScale.chordal_harmony();
+		cout << "We will write a tight harmony to go along with the notes you enter.  This means we will create a harmony line that is made up of notes that are 3rds and 6ths away from the melodic note." << endl;
+		ourScale.tight_harmony();
 		thirdMenu(ourScale);
 		break;
 	case 4:

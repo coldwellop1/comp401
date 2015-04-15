@@ -184,10 +184,12 @@ void scale::tight_harmony(){
 
 void scale::tight_harmony_h(){
 	cin >> now;
-	//need to keep track of previous 2 notes and pick the 3rd or 6th that is closest to the most recent note.
+
+	now[0] = toupper(now[0]);
+
 	if (now == "0")
 		return;
-	if (now == root){
+	else if (now == root){
 		_now = 1;
 		opt_1 = third;	// a third up
 		_opt_1 = 3;
@@ -196,9 +198,11 @@ void scale::tight_harmony_h(){
 		opt_3 = fifth;	// a third down
 		_opt_3 = 5;
 		opt_4 = second;	// a sixth down
-		_opt_4 = 2;
+		_opt_4 = 2;	
+		find_closest();
+		last = _now;
 	}
-	if (now == second){
+	else if (now == second){
 		_now = 2;
 		opt_1 = fourth;	// a third up
 		_opt_1 = 4;
@@ -208,8 +212,10 @@ void scale::tight_harmony_h(){
 		_opt_3 = 6;
 		opt_4 = third;	// a sixth down
 		_opt_4 = 3;
+		find_closest();
+		last = _now;
 	}
-	if (now == third){
+	else if (now == third){
 		_now = 3;
 		opt_1 = fifth;	// a third up
 		_opt_1 = 5;
@@ -219,8 +225,10 @@ void scale::tight_harmony_h(){
 		_opt_3 = 7;
 		opt_4 = fourth;	// a sixth down
 		_opt_4 = 4;
+		find_closest();
+		last = _now;
 	}
-	if (now == fourth){
+	else if (now == fourth){
 		_now = 4;
 		opt_1 = sixth;	// a third up
 		_opt_1 = 6;
@@ -230,8 +238,10 @@ void scale::tight_harmony_h(){
 		_opt_3 = 1;
 		opt_4 = fifth;	// a sixth down
 		_opt_4 = 5;
+		find_closest();
+		last = _now;
 	}
-	if (now == fifth){
+	else if (now == fifth){
 		_now = 5;
 		opt_1 = seventh;	// a third up
 		_opt_1 = 7;
@@ -241,8 +251,10 @@ void scale::tight_harmony_h(){
 		_opt_3 = 2;
 		opt_4 = sixth;	// a sixth down
 		_opt_4 = 6;
+		find_closest();
+		last = _now;
 	}
-	if (now == sixth){
+	else if (now == sixth){
 		_now = 6;
 		opt_1 = root;	// a third up
 		_opt_1 = 1;
@@ -252,8 +264,10 @@ void scale::tight_harmony_h(){
 		_opt_3 = 3;
 		opt_4 = seventh;	// a sixth down
 		_opt_4 = 7;
+		find_closest();
+		last = _now;
 	}
-	if (now == seventh){
+	else if (now == seventh){
 		_now = 7;
 		opt_1 = second;	// a third up
 		_opt_1 = 2;
@@ -263,10 +277,12 @@ void scale::tight_harmony_h(){
 		_opt_3 = 4;
 		opt_4 = root;	// a sixth down
 		_opt_4 = 1;
+		find_closest();
+		last = _now;
 	}
+	else
+		cout << "ERROR: That note does not exist in this scale!!" << endl;
 
-	find_closest();
-	last = _now;
 	tight_harmony_h();
 }
 
@@ -281,26 +297,18 @@ void scale::find_closest(){
 	if (dif2 < smallest){
 		smallest = dif2;
 		closest = opt_2;
+		last = _opt_2;
 	}
 	if (dif3 < smallest){
 		smallest = dif3;
 		closest = opt_3;
+		last = _opt_3;
 	}
 	if (dif4 < smallest){
 		smallest = dif4;
 		closest = opt_4;
+		last = _opt_4;
 	}
 	cout << "-----" << " " << closest << endl << endl;
 
 }
-/*
-void scale::chordal_harmony(){
-	cout << "Chordal Harmony - enter 0 at any time to quit." << endl << "You may now enter your melody." << endl;
-	
-	chordal_harmony_h();
-}
-
-void scale::chordal_harmony_h(){
-	chordal_harmony_h();
-}
-*/
